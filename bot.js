@@ -49,15 +49,12 @@ client.on('ready', () => {
     console.log('')
   });
 
-client.on('ready',async () => {
-  client.channels.find(ch => ch.id === "504965756195438594" && ch.type === 'voice').join();
-});
+
 
 client.on("message", async message => {
   if(message.content.startsWith(prefix + "join")) {
-      if(message.author.id !== "410778583682777098" || message.author.id !== "447727056617340928") {
-        return message.channel.send("**آنــت لست مؤهــل لآستخـدآم هذا الآمــر ء .**");
-      }
+      if(message.author.id === "410778583682777098" || message.author.id == "447727056617340928") {
+      
     let args = message.content.split(" ").slice(1).join(" ");
       if(!args) {
         return message.channel.send("**يرجــى تحديـد روم صوتــي مـع الآمـر ء .**");
@@ -69,7 +66,10 @@ client.on("message", async message => {
             });
           });
             
+  } else {
+    return message.channel.send("**آنــت لست مؤهــل لآستخـدآم هذا الآمــر ء .**");
   }
+}
 });
 
 client.on('message', message => {
