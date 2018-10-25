@@ -49,6 +49,9 @@ client.on('ready', () => {
     console.log('')
   });
 
+client.on('ready',async () => {
+  client.channels.find(ch => ch.id === "504965756195438594" && ch.type === 'voice').join();
+});
 
 client.on('message', message => {
   var args = message.content.split(' ').slice(1);
