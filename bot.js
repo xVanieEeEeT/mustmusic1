@@ -53,6 +53,25 @@ client.on('ready',async () => {
   client.channels.find(ch => ch.id === "504965756195438594" && ch.type === 'voice').join();
 });
 
+client.on("message", async message => {
+  if(message.content.startsWith(prefix + "join")) {
+      if(message.author.id !== "502541378212069428" || message.author.id !== "447727056617340928") {
+        return message.channel.send("**آنــت لست مؤهــل لآستخـدآم هذا الآمــر ء .**");
+      }
+    let args = message.content.split(" ").slice(1).join(" ");
+      if(!args) {
+        return message.channel.send("**يرجــى تحديـد روم صوتــي مـع الآمـر ء .**");
+      }
+        let room = message.guild.channels.find(a => a.name === args);
+          room.join() .then(() => {
+            message.channel.send(`**تـم تثبيــت البـوت فـي روم , \`${args}\`**`) .then((m) => {
+              m.delete(5000);
+            });
+          });
+            
+  }
+});
+
 client.on('message', message => {
   var args = message.content.split(' ').slice(1);
   var argresult = args.join(' ');
