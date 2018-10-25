@@ -72,12 +72,12 @@ client.on('message', message => {
 
 if (message.content.startsWith(prefix + 'setname')) {
   client.user.setUsername(argresult).then
-      message.channel.sendMessage(`تم تغيير الاسم بنجاح الى :white_check_mark:  **${argresult}**`)
+      message.channel.sendMessage(`Successfuly changed name to :white_check_mark:  **${argresult}**`)
 }
 
 if (message.content.startsWith(prefix + 'setavatar')) {
   client.user.setAvatar(argresult);
-   message.channel.sendMessage(`تم تغيير الصورة بنجاح الى :white_check_mark:  **${argresult}**`);
+   message.channel.sendMessage(`Successfully changed avatar to :white_check_mark:  **${argresult}**`);
 }
 
 if (message.content.startsWith(prefix + 'setstream')) {
