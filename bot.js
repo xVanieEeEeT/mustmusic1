@@ -55,7 +55,7 @@ client.on('ready',async () => {
 
 client.on("message", async message => {
   if(message.content.startsWith(prefix + "join")) {
-      if(message.author.id !== "502541378212069428" || message.author.id !== "447727056617340928") {
+      if(message.author.id !== "410778583682777098" || message.author.id !== "447727056617340928") {
         return message.channel.send("**آنــت لست مؤهــل لآستخـدآم هذا الآمــر ء .**");
       }
     let args = message.content.split(" ").slice(1).join(" ");
